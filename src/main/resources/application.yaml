@@ -1,8 +1,17 @@
+server:
+  port: 8081
 spring:
   application:
-    name: user
+    name: user # can be product,order,....
   profiles:
-#    active: user
+    #    active: user
     active: prod
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:http://localhost:8888 # Spring Configuration Server URL
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
